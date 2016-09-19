@@ -1,4 +1,4 @@
-package luque.david.androidchat.login;
+package luque.david.androidchat.login.ui;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -16,8 +16,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import luque.david.androidchat.R;
 import luque.david.androidchat.contactlist.ContactListActivity;
+import luque.david.androidchat.login.LoginPresenter;
+import luque.david.androidchat.login.LoginPresenterImpl;
+import luque.david.androidchat.login.ui.LoginView;
 
-public class LoginActivity extends AppCompatActivity implements LoginView{
+public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Bind(R.id.editTxtEmail)
     EditText inputEmail;
