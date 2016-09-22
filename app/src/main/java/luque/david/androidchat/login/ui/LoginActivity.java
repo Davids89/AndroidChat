@@ -15,10 +15,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import luque.david.androidchat.R;
-import luque.david.androidchat.contactlist.ContactListActivity;
+import luque.david.androidchat.contactlist.ui.ContactListActivity;
 import luque.david.androidchat.login.LoginPresenter;
 import luque.david.androidchat.login.LoginPresenterImpl;
-import luque.david.androidchat.login.ui.LoginView;
 
 public class LoginActivity extends AppCompatActivity implements LoginView {
 
