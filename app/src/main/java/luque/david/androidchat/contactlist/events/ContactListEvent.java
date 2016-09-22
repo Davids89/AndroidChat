@@ -1,4 +1,4 @@
-package luque.david.androidchat.contactlist;
+package luque.david.androidchat.contactlist.events;
 
 /**
  * Created by david on 22/9/16.
