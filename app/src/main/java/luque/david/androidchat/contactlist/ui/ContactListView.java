@@ -7,7 +7,7 @@ import luque.david.androidchat.entities.User;
  */
 
 public interface ContactListView {
-    void onContact(User user);
+    void onContactAdded(User user);
     void onContactChanged(User user);
     void onContactRemoved(User user);
 }

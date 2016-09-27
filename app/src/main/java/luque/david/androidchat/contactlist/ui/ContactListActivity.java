@@ -87,7 +87,7 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
     }
 
     @Override
-    public void onContact(User user) {
+    public void onContactAdded(User user) {
 
     }
 
