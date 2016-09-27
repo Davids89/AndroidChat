@@ -102,7 +102,7 @@ public class FirebaseHelper {
         notifyContactsOfConnectionChange(online, false);
     }
 
-    public void SignOff(){
+    public void signOff(){
         notifyContactsOfConnectionChange(User.OFFLINE, true);
     }
 
