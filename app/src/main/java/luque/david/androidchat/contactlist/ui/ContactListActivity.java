@@ -9,17 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import luque.david.androidchat.R;
 import luque.david.androidchat.addcontact.ui.AddContactFragment;
-import luque.david.androidchat.chat.ChatActivity;
+import luque.david.androidchat.chat.ui.ChatActivity;
 import luque.david.androidchat.contactlist.ContactListPresenter;
 import luque.david.androidchat.contactlist.ContactListPresenterImpl;
 import luque.david.androidchat.contactlist.ui.adapters.ContactListAdapter;

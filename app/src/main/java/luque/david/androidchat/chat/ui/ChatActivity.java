@@ -1,4 +1,4 @@
-package luque.david.androidchat.chat;
+package luque.david.androidchat.chat.ui;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,16 +12,22 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 import luque.david.androidchat.R;
+import luque.david.androidchat.chat.ui.adapters.ChatAdapter;
+import luque.david.androidchat.chat.ChatPresenter;
+import luque.david.androidchat.chat.ChatPresenterImpl;
 import luque.david.androidchat.domain.AvatarHelper;
 import luque.david.androidchat.entities.ChatMessage;
 import luque.david.androidchat.lib.GlideImageLoader;
 import luque.david.androidchat.lib.ImageLoader;
 
-public class ChatActivity extends AppCompatActivity implements ChatView{
+public class ChatActivity extends AppCompatActivity implements ChatView {
 
     @Bind(R.id.imgAvatar)
     CircleImageView imgAvatar;
@@ -61,10 +67,19 @@ public class ChatActivity extends AppCompatActivity implements ChatView{
     }
 
     private void setupAdapter() {
+        ChatMessage msg1 = new ChatMessage();
+        ChatMessage msg2 = new ChatMessage();
+
+        msg1.setMsg("hola");
+        msg2.setMsg("como estas");
+        msg1.setSentByMe(true);
+        msg2.setSentByMe(false);
+        adapter = new ChatAdapter(this, Arrays.asList(new ChatMessage[]{msg1, msg2}));
     }
 
     private void setupRecyclerView() {
         messageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        messageRecyclerView.setAdapter(adapter);
     }
 
     private void setupToolbar(Intent i) {
