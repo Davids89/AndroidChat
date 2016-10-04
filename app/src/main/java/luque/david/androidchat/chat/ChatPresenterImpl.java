@@ -1,5 +1,7 @@
 package luque.david.androidchat.chat;
 
+import org.greenrobot.eventbus.Subscribe;
+
 import luque.david.androidchat.chat.ui.ChatView;
 import luque.david.androidchat.entities.User;
 import luque.david.androidchat.lib.EventBus;
@@ -57,6 +59,7 @@ public class ChatPresenterImpl implements ChatPresenter {
     }
 
     @Override
+    @Subscribe
     public void onEventMainThread(ChatEvent event) {
         if(view != null){
             view.onMessageReceived(event.getMessage());

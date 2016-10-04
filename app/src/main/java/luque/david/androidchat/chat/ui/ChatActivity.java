@@ -14,9 +14,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import luque.david.androidchat.R;
 import luque.david.androidchat.chat.ui.adapters.ChatAdapter;
@@ -67,14 +69,8 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
     }
 
     private void setupAdapter() {
-        ChatMessage msg1 = new ChatMessage();
-        ChatMessage msg2 = new ChatMessage();
 
-        msg1.setMsg("hola");
-        msg2.setMsg("como estas");
-        msg1.setSentByMe(true);
-        msg2.setSentByMe(false);
-        adapter = new ChatAdapter(this, Arrays.asList(new ChatMessage[]{msg1, msg2}));
+        adapter = new ChatAdapter(this, new ArrayList<ChatMessage>());
     }
 
     private void setupRecyclerView() {
@@ -97,6 +93,8 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
 
         ImageLoader imageLoader = new GlideImageLoader(getApplicationContext());
         imageLoader.load(imgAvatar, AvatarHelper.getAvatarUrl(recipient));
+
+        setSupportActionBar(toolbar);
     }
 
 
@@ -122,5 +120,12 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
     public void onMessageReceived(ChatMessage msg) {
         adapter.add(msg);
         messageRecyclerView.scrollToPosition(adapter.getItemCount() - 1);
+    }
+
+
+    @OnClick(R.id.btnSendMessage)
+    public void sendMessage(){
+        presenter.sendMessage(editTxtMessage.getText().toString());
+        editTxtMessage.setText("");
     }
 }
