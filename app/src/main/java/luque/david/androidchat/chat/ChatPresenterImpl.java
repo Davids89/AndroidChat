@@ -1,5 +1,7 @@
 package luque.david.androidchat.chat;
 
+import luque.david.androidchat.chat.ui.ChatView;
+
 /**
  * Created by david on 30/9/16.
  */

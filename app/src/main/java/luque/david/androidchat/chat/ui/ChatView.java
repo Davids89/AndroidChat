@@ -1,4 +1,4 @@
-package luque.david.androidchat.chat;
+package luque.david.androidchat.chat.ui;
 
 import luque.david.androidchat.entities.ChatMessage;
 
